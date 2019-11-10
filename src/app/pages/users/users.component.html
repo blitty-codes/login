@@ -1,0 +1,10 @@
+<button (click)="getUsers()">Cargar todos los usuarios</button>
+
+<div *ngFor="let user of users; index as i"><br>
+    <div style="width: 100%">
+        <div>
+            <p>El usuario número {{ i+1 }} es {{ user.name }}</p>
+            <p>Su contraseña es "{{ user.password }}"...</p>
+        </div>
+    </div>
+</div>
