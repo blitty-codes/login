@@ -1,0 +1,15 @@
+<button (click)="getBooks()">Cargar todos los libros</button>
+
+<div *ngFor="let book of books; index as i"><br>
+    <div style="width: 100%">
+        <div>
+            <h1>El libro número {{ i+1 }} es {{ book.title }}</h1>
+            <p>Descripcion: {{ book.description }}</p>
+            <p>Autor: {{ book.author }}</p>
+            <p>Publisher: {{ book.publisher }}</p>
+            <p>ISBN: {{ book.ISBN }}</p>
+            <p>Price: {{ book.price }}</p>
+            <p>Date: {{ book.publicationDate }}</p>
+        </div>
+    </div>
+</div>

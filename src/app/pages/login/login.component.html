@@ -2,6 +2,7 @@
     <form #login="ngForm" (ngSubmit)="loginCall(login.form)" id="login">
         <input type="email" name="mail" placeholder="Email" ngModel required />
         <input type="password" name="password" placeholder="Password" ngModel required />
-        <input type="submit" value="send" />
+        <input type="submit" value="send" [disabled]="!login.valid"/>
     </form>
+    <a href="http://localhost:4200/register">Register</a>
 </div>

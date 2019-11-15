@@ -1,0 +1,11 @@
+<div class="loginContainer">
+    <form #register="ngForm" (ngSubmit)="registerCall(register.form)" id="login">
+        <input type="text" name="name" placeholder="Name" ngModel required />
+        <input type="text" name="lastName" placeholder="lastName" ngModel required />
+        <input type="email" name="mail" placeholder="Email" ngModel required />
+        <input type="password" name="password" placeholder="Password" ngModel required />
+        <input type="number" name="phone" placeholder="Phone" ngModel required />
+        <input type="submit" value="send" [disabled]="!register.valid"/>
+    </form>
+    <a href="http://localhost:4200/">Login</a>
+</div>
