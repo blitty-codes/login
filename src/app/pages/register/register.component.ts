@@ -2,6 +2,7 @@ import { CallsService } from '../../services/calls.service';
 
 import { Component, OnInit } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -10,18 +11,18 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private call: CallsService) { }
+  constructor(private call: CallsService, private router: Router) { }
 
   ngOnInit() {
   }
 
   registerCall(data) {
-    console.log(data.value);
-    this.call.register(data.value).subscribe((response) => {
-      console.log('ghcdhgcdgh')
-      window.location.pathname = 'books';
+    this.call.register(data.value).subscribe((response: {
+      token: string
+    }) => {
+      localStorage.setItem('token', response.token);
+      this.router.navigateByUrl('books');
     }, (err: HttpErrorResponse) => {
-      console.log('error!!')
       console.log(err.message);
     })
   }
