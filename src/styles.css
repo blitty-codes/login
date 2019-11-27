@@ -11,3 +11,36 @@ body {
         margin-bottom: 2%;
         border-radius: .25rem;
     }
+
+    .Container{
+        margin: auto;
+        width: fit-content;
+        padding: 10px;
+    }
+
+        #subContainer{
+            display: grid;
+        }
+
+            #subContainer input{
+                height: 15px;
+                margin: 5px;
+                padding: 18px;
+                border-radius: 20px;
+                border-width: 0;
+                background-color: #383434;
+                color: #7b7b7b;
+            }
+
+            #subContainer input[type="submit"]{
+                height: fit-content;
+                background-color: #d8d8d8;
+                padding: 8px;
+                color: #494949;
+            }
+
+            #subContainer input[type="submit"]:hover{
+                cursor: pointer;
+                background-color: #96d0dd;
+                transition: background-color .5s;
+            }

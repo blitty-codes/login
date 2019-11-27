@@ -17,12 +17,12 @@ export class BooksComponent implements OnInit {
   books: Book[];
 
   ngOnInit() {
+    this.calls.tokenValidation(localStorage.getItem('token')).subscribe((response) => { }, (error) => {
+      this.router.navigateByUrl('/');
+    });
   }
 
   getBooks() {
-    this.calls.tokenValidation(localStorage.getItem('token')).subscribe((response) => {}, (error) => {
-      this.router.navigateByUrl('/');
-    });
     this.calls.getBooks().subscribe((data: Book[]) => {
       this.books = data;
     });

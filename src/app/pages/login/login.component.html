@@ -1,5 +1,7 @@
-<div class="loginContainer">
-    <form #login="ngForm" (ngSubmit)="loginCall(login.form)" id="login">
+<img src="../assets/icon2.png" alt="logo" width="250px" />
+
+<div class="Container">
+    <form #login="ngForm" (ngSubmit)="loginCall(login.form)" id="subContainer">
         <input type="email" name="mail" placeholder="Email" ngModel required />
         <input type="password" name="password" placeholder="Password" ngModel required />
         <input type="submit" value="send" [disabled]="!login.valid"/>

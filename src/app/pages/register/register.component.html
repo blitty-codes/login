@@ -1,5 +1,7 @@
-<div class="loginContainer">
-    <form #register="ngForm" (ngSubmit)="registerCall(register.form)" id="login">
+<img src="../assets/icon2.png" alt="logo" width="250px" />
+
+<div class="Container">
+    <form #register="ngForm" (ngSubmit)="registerCall(register.form)" id="subContainer">
         <input type="text" name="name" placeholder="Name" ngModel required />
         <input type="text" name="lastName" placeholder="lastName" ngModel required />
         <input type="email" name="mail" placeholder="Email" ngModel required />

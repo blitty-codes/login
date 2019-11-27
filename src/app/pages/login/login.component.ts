@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
     this.call.login(data.value).subscribe((response: {
       token: string
     }) => {
+      console.log(data.value);
       localStorage.setItem('token', response.token);
       this.router.navigateByUrl('books');
     }, (err: HttpErrorResponse) => {

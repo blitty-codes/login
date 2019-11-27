@@ -1,7 +1,8 @@
-<button (click)="getBooks()" class="btn btn-primary">Cargar todos los libros</button>
+<app-search (search)="handleSearch($event)"></app-search>
+<app-type (type)="handleType($event)"></app-type>
 
 <div class="text-center w">
-    <div *ngFor="let book of books; index as i" class="card subcards"><br>
+    <div *ngFor="let book of books | search: types" class="card subcards"><br>
         <div class="card-body">
             <div>
                 <h1>{{ book.title }}</h1>
