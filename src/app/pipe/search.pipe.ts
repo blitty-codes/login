@@ -4,11 +4,11 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'search'
 })
 export class SearchPipe implements PipeTransform {
-
-  transform(list: any[], types: any[]): any[] {
-    if (!types[0]) return list;
-    console.log(list);
-    return list.filter(book => book.types[1].toUpperCase().includes(types[0].toUpperCase()));
+  
+  transform(list: any[], inputSelection: string, inputType: string): any[] {
+    if (inputSelection === undefined || inputType === undefined) return list;
+    console.log(`InputSelection: ${inputSelection}\ninputType: ${inputType}`);
+    return list.filter(book => book.inputType.toUpperCase().includes(inputSelection.toUpperCase()));
   }
 
 }

@@ -2,7 +2,7 @@
 <app-type (type)="handleType($event)"></app-type>
 
 <div class="text-center w">
-    <div *ngFor="let book of books | search: types" class="card subcards"><br>
+    <div *ngFor="let book of books | search: filtroValor:filterType" class="card subcards"><br>
         <div class="card-body">
             <div>
                 <h1>{{ book.title }}</h1>

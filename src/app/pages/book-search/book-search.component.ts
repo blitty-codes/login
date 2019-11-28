@@ -13,7 +13,6 @@ export class BookSearchComponent implements OnInit {
 
   constructor(private calls: CallsService, private router: Router) { }
 
-  types = new Array(2);
   book: Book;
   books: Book[];
 
@@ -26,16 +25,12 @@ export class BookSearchComponent implements OnInit {
 
   handleSearch(value: string) {
     this.filtroValor = value;
-    this.types[0] = this.filtroValor;
-    console.log(this.types);
   }
 
   handleType(value: string) {
     this.filterType = value;
-    this.types[1] = this.filterType;
-    console.log(this.types);
   }
 
   filterType: string;
-  filtroValor = '';
+  filtroValor: string;
 }
