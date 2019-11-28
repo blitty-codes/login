@@ -5,4 +5,5 @@ export interface Book {
     price: Number,
     publisher: String,
     description: String,
+    publicationDate: Date,
 }
